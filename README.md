@@ -7,13 +7,16 @@
 # 音楽好きユーザーのための出会い系アプリ
 
 ## 実装機能
-1.ユーザーはお気に入りの楽曲をrootページに投稿できる
-2.ユーザーはグループを作成し、他のユーザーとチャットができる
-3.グループは一人のアーティストと結びつき、グループ内ではそのアーティストについてのチャットができる
-4.rootページではフォローしているアーティストの楽曲（ユーザーが投稿した楽曲）と、フォローしているユーザーが投稿した楽曲（フォローしていないアーティストの楽曲も含む）が閲覧できる
+### 1.ユーザーはお気に入りの楽曲をrootページに投稿できる
+### 2.ユーザーはグループを作成し、他のユーザーとチャットができる
+### 3.各グループはアーティストと結びつき、グループ内ではそのアーティストについてのチャットができる
+### 4.rootページではフォローしているアーティストの楽曲（ユーザーが投稿した楽曲）と、フォローしているユーザーが投稿した楽曲（フォローしていないアーティストの楽曲も含む）が閲覧できる
+### 5.ユーザーのマイページを作成し、ユーザーが情報を登録・編集・閲覧できるようにする
+### 6.アーティストの紹介ページを作成し、ユーザーがアーティストの情報を登録・編集・閲覧できるようにする
 
-## アプリのオプション機能
-・グループ内で他のユーザーがメッセージを入力中に"〇〇さんがメッセージを入力中です"と表示させる
+## オプション機能
+### 1.グループ内で他のユーザーがメッセージを入力中に"〇〇さんがメッセージを入力中です"と表示させる
+### 2.ユーザー名とアーティスト名とグループ名をインクリメンタルサーチで検索
 
 # DB設計
 ## usersテーブル
@@ -22,6 +25,8 @@
 |nickname|string|null: false|    <!-- ニックネーム -->
 |email|string|null: false|       <!-- メールアドレス -->
 |password|string|null: false|    <!-- パスワード -->
+|introduction|text|-------|      <!-- プロフィール文 -->
+
 
 ### Association
 - has_many :audios                              <!-- ユーザーは複数の楽曲データを所有 -->
@@ -34,7 +39,6 @@
 |Column|Type|Options|
 |-----|----|-------|
 |follow_user_id|integer|null:false|                <!-- フォローするユーザーのid -->
-
 |user|reference|null: false, foreign_key: true|     <!-- userの外部キー -->
 
 ### Association
@@ -47,9 +51,8 @@
 |category|string|-------|        <!-- 楽曲のジャンル　-->
 |artist|string|null:false|       <!-- アーティスト -->
 |image|string|-------|           <!-- 楽曲の画像 -->
-|file||string|null:false|        <!-- 楽曲ファイル -->
+|file|string|null:false|        <!-- 楽曲ファイル -->
 |description|text|-------|       <!-- 楽曲の説明(ユーザーによる紹介文または一押しポイント) -->
-
 |user|reference|null: false, foreign_key: true|     <!-- userの外部キー -->
 |artist|reference|null: false, foreign_key: true|   <!-- artistの外部キー -->
 
@@ -61,6 +64,7 @@
 |Column|Type|Options|
 |-----|----|-------|
 |name|string|null:false|          <!-- アーティスト名 -->
+|image|string|-------|            <!-- アーティストの画像 -->
 |description|text|null:false|     <!-- アーティストの説明 -->
 
 ### Association
@@ -83,7 +87,6 @@
 |-----|----|-------|
 |text|text|null:false|           <!-- チャットの内容 -->
 |image|string|-------|           <!-- チャットで送信する画像 -->
-
 |user|reference|null: false, foreign_key: true|    <!-- userの外部キー -->
 |group|reference|null: false, foreign_key: true|   <!-- グループの外部キー -->
 
@@ -91,12 +94,10 @@
 - belongs_to :user               <!-- 一つのチャットは一人のユーザーが送信 -->
 - belongs_to :group　　　　　　　　 <!-- 一つのチャットは一つのグループに所属 -->
 
-
 ## groupsテーブル　　　　　　　　　　　
 |Column|Type|Options|
 |-----|----|-------|
 |name|string|null:false|　　　　　　<!-- グループ名 -->
-
 |artist|reference|null: false, foreign_key: true|    <!-- アーティストの外部キー -->
 
 ### Association
