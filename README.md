@@ -34,22 +34,32 @@
 - has_many :chats                               <!-- ユーザーは複数のチャットを送信できる -->
 - has_many :artists, through: :users_artists    <!-- ユーザーは複数のアーティストをフォローできる(中間テーブルのusers_artistsテーブルを経由) -->
 - has_many :follows                             <!-- ユーザーは複数のユーザーをフォローできる -->
+- has_many :followers                           <!-- ユーザーは複数のユーザーにフォローされる -->
 
 ## followsテーブル
 |Column|Type|Options|
 |-----|----|-------|
-|follow_user_id|integer|null:false|                <!-- フォローするユーザーのid -->
-|user|reference|null: false, foreign_key: true|     <!-- userの外部キー -->
+|user|reference|null: false, foreign_key: true|        <!-- userの外部キー -->
+|follower|reference|null: false, foreign_key: true|    <!--followerの外部キー -->
 
 ### Association
 - belongs_to :user                     <!-- ユーザーは複数のfollows情報を所有 -->
+- belongs_to :follower                 <!-- ユーザーはfollowsテーブルを中間テーブルとして、一人のフォローユーザーを所有 -->
+
+## followersテーブル
+|Column|Type|Options|
+|-----|----|-------|
+|user|reference|null: false, foreign_key: true|     <!-- userの外部キー -->
+
+### Association
+- belongs_to :user                     <!-- ユーザーは複数のfollowers情報を所有 -->
+- has_many :follows                    <!-- フォロワーは複数のフォローユーザーを所有 -->
 
 ##  audiosテーブル
 |Column|Type|Options|
 |-----|----|-------|
 |title|string|null:false|        <!-- 楽曲のタイトル -->
-|category|string|-------|        <!-- 楽曲のジャンル　-->
-|artist|string|null:false|       <!-- アーティスト -->
+|category|string|-------|        <!-- 楽曲のジャンル -->
 |image|string|-------|           <!-- 楽曲の画像 -->
 |file|string|null:false|        <!-- 楽曲ファイル -->
 |description|text|-------|       <!-- 楽曲の説明(ユーザーによる紹介文または一押しポイント) -->
@@ -92,17 +102,17 @@
 
 ### Association
 - belongs_to :user               <!-- 一つのチャットは一人のユーザーが送信 -->
-- belongs_to :group　　　　　　　　 <!-- 一つのチャットは一つのグループに所属 -->
+- belongs_to :group               <!-- 一つのチャットは一つのグループに所属 -->
 
-## groupsテーブル　　　　　　　　　　　
+## groupsテーブル
 |Column|Type|Options|
 |-----|----|-------|
-|name|string|null:false|　　　　　　<!-- グループ名 -->
+|name|string|null:false|                             <!-- グループ名 -->
 |artist|reference|null: false, foreign_key: true|    <!-- アーティストの外部キー -->
 
 ### Association
 - has_many :users, through: :members      <!-- グループは複数のユーザーが所属(中間テーブルのmembersテーブルを経由) -->
-- has_many :chats   　　　　　　　　　　　　　<!-- グループでは複数のチャットが交わされる -->
+- has_many :chats                         <!-- グループでは複数のチャットが交わされる -->
 - belongs_to :artist                      <!-- グループには一人のアーティストが存在 -->
 
 ## membersテーブル
