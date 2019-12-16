@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ 
+ @import "reset";
+ @import "font-awesome";
+ @import "audios";
+ 
+ html {
+  width:100vw;
+  height:100vh;
+}
