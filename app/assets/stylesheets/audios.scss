@@ -5,7 +5,7 @@
   box-sizing: border-box;
   padding:0px 20px 0px 20px;
   background-color: aliceblue;
-  &__sidebar {
+  &__sidebaricon {
     display: inline-block; 
     i.fas.fa-bars::before {
       color:gray;
@@ -45,4 +45,11 @@
       border-radius: 50%;
     }
   }
+}
+
+
+.index_sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color:  aliceblue;
 }
