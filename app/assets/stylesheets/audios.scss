@@ -66,16 +66,17 @@
 // -----------サイドバー1（大きいビュー）---------------------------
 .index_sidebar1 {
   background-color:  aliceblue;
-  width: 250px;
+  width: 150px;
   height: 100vh;
-  float:left;
   position: absolute;
   top:54px;
+  left:65px;
   box-sizing: border-box;
   padding: 5px;
   &__home {
+    
     height:50px;
-    width:100%;
+    width:100px;
     box-sizing: border-box;
     padding: 5px 10px;
     i.fab.fa-napster.fa-2x::before {
@@ -85,7 +86,7 @@
     }
     li {
       display: inline-block;
-      margin: 0px 40px 5px;
+      margin: 9px 0px 5px;
       width:100px;
       list-style:none;
     }
@@ -123,11 +124,11 @@
 }
 
 .index__main1{
-  width: 1190px;
+  width: 1225px;
   height:100vh;
   position: absolute;
   top:54px;
-  left:250px;
+  left:215px;
 }
 
 .index__main2 {
