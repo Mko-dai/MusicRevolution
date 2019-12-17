@@ -1,6 +1,7 @@
 // -----------ヘッダー---------------------------
 
 .index_header {
+  background-color:  aliceblue;
   width:100%;
   height:54px;
   position:fixed;
@@ -28,12 +29,14 @@
     position:relative;
     left:400px;
     bottom:7px;
+    &__change {
+      display:inline-block;
+    }
     &__form {
+      display:inline-block;
       .audiotitle1 {
         width:500px;
-      }
-      i.fas.fa-search::before {
-
+        outline: none;
       }
     }
   }
@@ -62,6 +65,7 @@
 
 // -----------サイドバー1（大きいビュー）---------------------------
 .index_sidebar1 {
+  background-color:  aliceblue;
   width: 250px;
   height: 100vh;
   float:left;
@@ -92,11 +96,12 @@
     }
   } 
 }
-.index_sidebar1_display_none {
+.display_none {
   display:none;
 }
 // -----------サイドバー2（小さいビュー）---------------------------
 .index_sidebar2 {
+  background-color:  aliceblue;
   width:65px;
   height:100vh;
   float:left;
@@ -117,10 +122,18 @@
   }
 }
 
-// .main__main{
-//   width: 250px;
-//   height:100vh;
-//   background-color:  aliceblue;
-//   position: absolute;
-//   top:54px;
-// }
+.index__main1{
+  width: 1190px;
+  height:100vh;
+  position: absolute;
+  top:54px;
+  left:250px;
+}
+
+.index__main2 {
+  width: 1375px;
+  height:100vh;
+  position: absolute;
+  top:54px;
+  left:65px;
+}
