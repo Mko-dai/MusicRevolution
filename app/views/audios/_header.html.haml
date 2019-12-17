@@ -1,6 +1,7 @@
 .index_header
   .index_header__sidebaricon
-    %i.fas.fa-bars{width:"20px",height:"20px"}
+    %i.fas.fa-bars{width:"20px",height:"20px",onclick:"CloseSidebar1()"}
+    = link_to image_tag("logo.jpg",class:"logo"),""
   .index_header__searchbar
     =form_with do |f|
       .index_header__searchbar__form
@@ -11,6 +12,6 @@
     = link_to "" do
       %i.fab.fa-napster.fa-2x   
   .index_header__userimage
-    = link_to image_tag("/images/member_photo_noimage.png",class:"userphoto"),""
+    = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
 .oihgjfhgd
     
