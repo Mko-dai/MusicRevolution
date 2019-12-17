@@ -6,7 +6,6 @@
   position:fixed;
   box-sizing: border-box;
   padding:0px 20px 0px 20px;
-  background-color: aliceblue;
   z-index: 5;
   &__sidebaricon {
     display: inline-block; 
@@ -65,7 +64,6 @@
 .index_sidebar1 {
   width: 250px;
   height: 100vh;
-  background-color:  aliceblue;
   float:left;
   position: absolute;
   top:54px;
@@ -94,12 +92,13 @@
     }
   } 
 }
-
+.index_sidebar1_display_none {
+  display:none;
+}
 // -----------サイドバー2（小さいビュー）---------------------------
 .index_sidebar2 {
   width:65px;
   height:100vh;
-  background-color:  aliceblue;
   float:left;
   position: absolute;
   top:54px;
@@ -117,3 +116,11 @@
     } 
   }
 }
+
+// .main__main{
+//   width: 250px;
+//   height:100vh;
+//   background-color:  aliceblue;
+//   position: absolute;
+//   top:54px;
+// }
