@@ -1,5 +1,4 @@
 // -----------ヘッダー---------------------------
-
 .index_header {
   background-color:  aliceblue;
   width:100%;
@@ -16,10 +15,10 @@
     .logo {
       width:40px;
       height:40px;
-      border-radius: 50%;
+      border-radius: 20%;
       position:relative;
-      left:55px;
-      top:10px;
+      left:45px;
+      top:8px;
       background-color: aliceblue;
     }
   }
@@ -129,6 +128,8 @@
   position: absolute;
   top:54px;
   left:215px;
+  box-sizing: border-box;
+  padding:30px;
 }
 
 .index__main2 {
@@ -137,4 +138,18 @@
   position: absolute;
   top:54px;
   left:65px;
+  box-sizing: border-box;
+  padding:30px 10px 30px 10px;
 }
+
+.music-form {
+    display:inline-block;
+    width:150px;
+    height:200px;
+    box-sizing: border-box;
+    margin:0px 10px 10px 0px;
+    .musicview {
+      width:100%;
+      height:100px;
+    }
+  }
