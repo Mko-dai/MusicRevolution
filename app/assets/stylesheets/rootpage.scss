@@ -64,10 +64,10 @@
 
 // -----------サイドバー1（大きいビュー）---------------------------
 .index_sidebar1 {
+  position: fixed;
   background-color:  aliceblue;
   width: 150px;
   height: 100vh;
-  position: absolute;
   top:54px;
   left:65px;
   box-sizing: border-box;
@@ -101,11 +101,11 @@
 }
 // -----------サイドバー2（小さいビュー）---------------------------
 .index_sidebar2 {
+  position: fixed;
   background-color:  aliceblue;
   width:65px;
   height:100vh;
   float:left;
-  position: absolute;
   top:54px;
   box-sizing: border-box;
   padding: 5px;
