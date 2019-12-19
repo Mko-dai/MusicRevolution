@@ -17,6 +17,8 @@
 ## オプション機能
 ### 1.グループ内で他のユーザーがメッセージを入力中に"〇〇さんがメッセージを入力中です"と表示させる
 ### 2.ユーザー名とアーティスト名とグループ名をインクリメンタルサーチで検索
+### 3.グループトーク&コメント時に@~でメンションをつけて、ユーザーを検索することができる
+
 
 # DB設計
 ## usersテーブル
@@ -35,6 +37,7 @@
 - has_many :artists, through: :users_artists    <!-- ユーザーは複数のアーティストをフォローできる(中間テーブルのusers_artistsテーブルを経由) -->
 - has_many :follows                             <!-- ユーザーは複数のユーザーをフォローできる -->
 - has_many :followers                           <!-- ユーザーは複数のユーザーにフォローされる -->
+- has_maniy :comments                           <!-- ユーザーは投稿に対し、複数のコメントを残すことができる -->
 
 ## followsテーブル
 |Column|Type|Options|
@@ -69,6 +72,19 @@
 ### Association
 - belongs_to :user                     <!-- 一つの楽曲は一人のユーザーに帰属 -->
 - belongs_to :artist                   <!-- 一つの楽曲は一人のアーティストに帰属 -->
+- has_many :comments                   <!-- 一つの楽曲は複数のユーザーのコメントを所有-->
+
+## commentsテーブル
+|Column|Type|Options|
+|-----|----|-------|
+|comment|text|null: false|
+|user|reference|null: false, foreign_key: true|     <!-- userの外部キー -->
+|audio|reference|null: false, foreign_key: true|   <!-- audioの外部キー -->
+
+### Association
+- belongs_to :user                <!-- 一つのコメントは一人のユーザーに帰属 -->
+- belongs_to :audio               <!-- 一つのコメントは一人の楽曲に帰属 -->
+
 
 ## artistsテーブル
 |Column|Type|Options|
