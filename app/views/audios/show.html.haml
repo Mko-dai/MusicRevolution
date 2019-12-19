@@ -4,3 +4,14 @@
     .show__top
       =image_tag("logo.jpg",class:"musicview")
     .show__discription
+  .users-list
+    〇〇さんのその他の投稿
+    %i.fas.fa-chevron-down{onclick:"UserPost()"}
+  #userpost.display_none
+    = link_to image_tag("logo.jpg",class:"musicview1"),""
+    %li 曲名
+    %li アーティスト名
+  #usercomment.comment2
+    .comment__top
+      コメント一覧
+  

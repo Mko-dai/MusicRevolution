@@ -1,16 +1,46 @@
 .show {
-  width:100%;
-  height:306px;
+  width:1000px;
+  height:194px;
+  position:fixed;
   &__top {
-    width:306px;
-    height:100%;
+    width:200px;
+    height:200px;
     box-sizing: border-box;
-    margin:0px 0px 0px 20px;
+    margin:0px 0px 0px 0px;
     border-style:outset;
     display:inline-block;
-}
+    z-index: 3;
+    background-color: red;
+    
+  }
 
   &__discription {
     display:inline-block;
  }
+}
+
+.users-list {
+  position: fixed;
+  top:300px;
+  font-weight: bold;
+}
+
+.music-form {
+  height:160px;
+  width:150px;
+  position: absolute;
+  top:270px;
+  display:inline-block;
+}
+
+.comment1 {
+  position: absolute;
+  top:450px;
+  font-weight: bold;
+}
+
+.comment2 {
+  position: absolute;
+  top:300px;
+  font-weight: bold;
 }
