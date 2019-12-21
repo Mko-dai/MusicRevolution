@@ -6,11 +6,11 @@ function CloseSidebar() {
 
   if (Sidebar1.className == "index_sidebar1"){
     Sidebar1.className = "display_none";
-    Main1.className = "index__main2"
+    Main1.className = "main2"
 
   }else{
     Sidebar1.className = "index_sidebar1";
-    Main1.className = "index__main1"
+    Main1.className = "main1"
   }
 };
 

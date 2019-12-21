@@ -53,17 +53,14 @@
     position:relative;
     top:6px;
     left:730px;
-    .userphoto {
-      width:40px;
-      height:40px;
-      border-radius: 50%;
-    }
+    
   }
 }
 
 
 // -----------サイドバー1（大きいビュー）---------------------------
 .index_sidebar1 {
+  z-index: 5;
   position: fixed;
   background-color:  aliceblue;
   width: 150px;
@@ -73,7 +70,6 @@
   box-sizing: border-box;
   padding: 5px;
   &__home {
-    
     height:50px;
     width:100px;
     box-sizing: border-box;
@@ -96,11 +92,9 @@
     }
   } 
 }
-.display_none {
-  display:none;
-}
 // -----------サイドバー2（小さいビュー）---------------------------
 .index_sidebar2 {
+  z-index: 5;
   position: fixed;
   background-color:  aliceblue;
   width:65px;
@@ -118,21 +112,31 @@
       color:gray;
       position: relative;
       top:3px;
-    } 
-  }
-}
+    } }
+    i.fas.fa-home.fa-2x::before {
+      color:gray;
+      position: relative;
+      top:3px;
+    }
+    i.fas.fa-user-friends.fa-2x::before {
+      color:gray;
+      position: relative;
+      top:3px;
 
-.index__main1{
+    }
+  }
+
+.main1{
   width: 1225px;
   height:100vh;
   position: absolute;
   top:54px;
   left:215px;
   box-sizing: border-box;
-  padding:30px;
+  padding:30px ;
 }
 
-.index__main2 {
+.main2 {
   width: 1375px;
   height:100vh;
   position: absolute;
@@ -141,15 +145,10 @@
   box-sizing: border-box;
   padding:30px 10px 30px 10px;
 }
-
-.music-form {
-    display:inline-block;
-    width:150px;
-    height:200px;
-    box-sizing: border-box;
-    margin:0px 10px 10px 0px;
-    .musicview {
-      width:100%;
-      height:100px;
-    }
-  }
+.annnai {
+  position:fixed;
+  width: 1440px;
+  background-color: white;
+  margin:10px;
+  color:tomato;
+}
