@@ -19,11 +19,13 @@
         %br
         %br
         .show__discription__about
-          %li 説明
+          .user__image
+            = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+            〇〇さんの一押しポイント
           %p 最高の曲ですああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
-    .users-list
+    .users-list{onclick:"UserPost()"}
       〇〇さんのその他の投稿
-      %i#toukouyajirushi.fas.fa-chevron-down{onclick:"UserPost()"}
+      %i#toukouyajirushi.fas.fa-chevron-down
     #userpost.display_none
       .music-form
         = link_to image_tag("logo.jpg",class:"musicview1"),""
@@ -42,9 +44,9 @@
         %li 曲名
         %li アーティスト名
   #usercomment.comment2
-    .comment__list
+    .comment__list{onclick:"CommentPost()"}
       コメント一覧
-      %i#commentyajirushi.fas.fa-chevron-down{onclick:"CommentPost()"}
+      %i#commentyajirushi.fas.fa-chevron-down
   #commentpost.display_none
     .user__image
       = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
