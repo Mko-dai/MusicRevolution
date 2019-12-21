@@ -1,17 +1,63 @@
 = render partial: "header-sidebar"
+.fa
 #mainadd.main1
-  .show
-    .show__top
-      =image_tag("logo.jpg",class:"musicview")
-    .show__discription
-  .users-list
-    〇〇さんのその他の投稿
-    %i.fas.fa-chevron-down{onclick:"UserPost()"}
-  #userpost.display_none
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
+  .fafafa
+    .show
+      .show__top
+        =image_tag("logo.jpg",class:"musicview")
+      .show__discription
+    .users-list
+      〇〇さんのその他の投稿
+      %i.fas.fa-chevron-down{onclick:"UserPost()"}
+    #userpost.display_none
+      .music-form
+        = link_to image_tag("logo.jpg",class:"musicview1"),""
+        %li 曲名
+        %li アーティスト名
+      .music-form
+        = link_to image_tag("logo.jpg",class:"musicview1"),""
+        %li 曲名
+        %li アーティスト名
+      .music-form
+        = link_to image_tag("logo.jpg",class:"musicview1"),""
+        %li 曲名
+        %li アーティスト名
+      .music-form
+        = link_to image_tag("logo.jpg",class:"musicview1"),""
+        %li 曲名
+        %li アーティスト名
   #usercomment.comment2
-    .comment__top
+    .comment__list
       コメント一覧
-  
+      %i.fas.fa-chevron-down{onclick:"CommentPost()"}
+  #commentpost.display_none
+    .user__image
+      = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      わーい
+    .user__image
+      = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      わーい
+    .user__image
+      = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      わーい
+    .user__image
+      = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      わーい
+    .user__image
+      = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      わーい
+    .user__image
+      = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      わーい
+    .user__image
+      = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      わーい
+    .user__image
+      = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      わーい
+    .user__image
+      = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      わーい
+    .user__image
+      = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      わーい

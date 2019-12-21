@@ -53,17 +53,14 @@
     position:relative;
     top:6px;
     left:730px;
-    .userphoto {
-      width:40px;
-      height:40px;
-      border-radius: 50%;
-    }
+    
   }
 }
 
 
 // -----------サイドバー1（大きいビュー）---------------------------
 .index_sidebar1 {
+  z-index: 5;
   position: fixed;
   background-color:  aliceblue;
   width: 150px;
@@ -97,6 +94,7 @@
 }
 // -----------サイドバー2（小さいビュー）---------------------------
 .index_sidebar2 {
+  z-index: 5;
   position: fixed;
   background-color:  aliceblue;
   width:65px;
@@ -138,10 +136,3 @@
   padding:30px 10px 30px 10px;
 }
 
-.music-form {
-    display:inline-block;
-    width:150px;
-    height:200px;
-    box-sizing: border-box;
-    margin:0px 10px 10px 0px;
-  }
