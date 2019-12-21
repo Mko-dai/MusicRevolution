@@ -17,13 +17,15 @@
   &__discription {
     position: absolute;
     left:220px;
+    &__about {
+      display: inline-block;
     li {
       display: inline-block;
       width:100px;
       list-style:none;
       font-weight:bold;
     }
-  }
+  }}
 }
 
 .users-list {
@@ -56,7 +58,7 @@
 
 #userpost.usermusic {
   position: fixed;
-  top:310px;
+  top:323px;
   height:170px;
 }
 
@@ -65,21 +67,6 @@
   width:100vw;
   
 }
-
-// .user {
-//   height:100vh;
-//   width:100%;
-//   position:absolute;
-//   top:305px;
-//   z-index: -5;
-//   &__image {
-//     width:90%;
-//   }
-//   &__comment {
-//     display:inline-block;
-    
-// }}
-
 .user1 {
   height:100vh;
   position:absolute;
@@ -116,13 +103,4 @@
   width:1440px;
   position: fixed;
   z-index:3
-}
-
-.fa {
-  position: fixed;
-  top:54px;
-  width:1440px;
-  height:30px;
-  background-color: white;
-  z-index: 1;
 }
