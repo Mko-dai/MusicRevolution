@@ -15,8 +15,15 @@
   }
 
   &__discription {
-    display:inline-block;
- }
+    position: absolute;
+    left:220px;
+    li {
+      display: inline-block;
+      width:100px;
+      list-style:none;
+      font-weight:bold;
+    }
+  }
 }
 
 .users-list {

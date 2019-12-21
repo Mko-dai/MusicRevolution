@@ -112,9 +112,19 @@
       color:gray;
       position: relative;
       top:3px;
-    } 
+    } }
+    i.fas.fa-home.fa-2x::before {
+      color:gray;
+      position: relative;
+      top:3px;
+    }
+    i.fas.fa-user-friends.fa-2x::before {
+      color:gray;
+      position: relative;
+      top:3px;
+
+    }
   }
-}
 
 .main1{
   width: 1225px;
@@ -135,4 +145,10 @@
   box-sizing: border-box;
   padding:30px 10px 30px 10px;
 }
-
+.annnai {
+  position:fixed;
+  width: 1440px;
+  background-color: white;
+  margin:10px;
+  color:tomato;
+}
