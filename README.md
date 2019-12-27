@@ -111,7 +111,7 @@
 ## chatsテーブル
 |Column|Type|Options|
 |-----|----|-------|
-|text|text|null:false|           <!-- チャットの内容 -->
+|text|text||                     <!-- チャットの内容 -->
 |image|string|-------|           <!-- チャットで送信する画像 -->
 |user|reference|null: false, foreign_key: true|    <!-- userの外部キー -->
 |group|reference|null: false, foreign_key: true|   <!-- グループの外部キー -->

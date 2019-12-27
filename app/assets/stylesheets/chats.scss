@@ -1,0 +1,67 @@
+.groupname {
+  position: fixed;
+  top:54px;
+  width:1440px;
+  height:30px;
+  background-color: white;
+  z-index: 1;
+}
+
+.chatsspace {
+  width:820px;
+  height:100vh;
+}
+
+.chatsindex {
+  
+  
+  
+// ---------テキストフォーム---------
+  &__textform1 {
+    background-color: khaki;
+    height:100px;
+    width:800px;
+    position:fixed;
+    top:690px;
+    left:300px;
+    // text-align: center;
+    box-sizing: border-box;
+    padding:25px 0px 0px 40px;
+    border-radius: 20%;
+    .chatsform {
+      height:50px;
+      width:600px;
+      outline: none;
+    }
+    .submit {
+      height:50px;
+      background-color: orange;
+      width:100px;
+      outline: none;
+    }
+  }
+
+  &__textform2 {
+    background-color: khaki;
+    height:100px;
+    width:800px;
+    position:fixed;
+    top:690px;
+    left:100px;
+    // text-align: center;
+    box-sizing: border-box;
+    padding:25px 0px 0px 40px;
+    border-radius: 20%;
+    .chatsform {
+      height:50px;
+      width:600px;
+      outline: none;
+    }
+    .submit {
+      height:50px;
+      background-color: orange;
+      width:100px;
+      outline: none;
+    }
+  }
+}

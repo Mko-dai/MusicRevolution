@@ -3,14 +3,17 @@ function CloseSidebar() {
   
   var Sidebar1	= document.getElementById("sidebaradd");
   var Main1 = document.getElementById("mainadd");
-
+  // チャットページの投稿フォームの位置調整
+  var textform = document.getElementById("textform");
+  
   if (Sidebar1.className == "index_sidebar1"){
     Sidebar1.className = "display_none";
     Main1.className = "main2"
-
+    textform.className = "chatsindex__textform2"
   }else{
     Sidebar1.className = "index_sidebar1";
     Main1.className = "main1"
+    textform.className = "chatsindex__textform1"
   }
 };
 
