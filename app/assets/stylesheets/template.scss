@@ -40,3 +40,61 @@
   background-color: white;
   z-index: 1;
 }
+
+.yohaku2 {
+  height:100px;
+  background-color: white;
+}
+
+.talk {
+  margin:10px;
+.user-chat {
+  display:inline-block;
+  position:relative;
+  bottom:15px;
+  height:51px;
+  p {
+    font-size: 16px;
+    padding:10px;
+    height:51px;
+    border:solid;
+    border-color: paleturquoise;
+    border-width: 1px;
+    border-radius: 20%;
+    height:30px;
+    background-color: white;
+}}
+
+.user__image {
+  display:inline-block;
+}
+}
+
+.talk2 {
+  margin:10px;
+  .user-chat {
+  display:inline-block;
+  position:relative;
+  bottom:15px;
+  height:51px;
+  position: relative;
+  left:438px;
+
+  p {
+    font-size: 16px;
+    padding:10px;
+    height:51px;
+    border:solid;
+    border-color: paleturquoise;
+    border-width: 1px;
+    border-radius: 20%;
+    height:30px;
+    background-color: white;
+}}
+
+.user__image {
+  display:inline-block;
+  position: relative;
+  left:438px;
+}
+}
