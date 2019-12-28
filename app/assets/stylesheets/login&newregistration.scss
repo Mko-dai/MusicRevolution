@@ -1,0 +1,96 @@
+// ------ログインページ--------
+.login {
+  width:100%;
+  text-align: center;
+  margin:0px 0px 0px 0px;
+  &__top {
+    .logo {
+      width:250px;
+      height:250px
+    }
+  }
+  &__form {
+    width:100%;
+    text-align: center;
+    position:relative;
+    bottom:30px;
+    &__field {
+      margin:10px 0px 0px 0px;
+      .formfield {
+        outline: none;
+        width:400px;
+        height:40px;
+      }
+    }
+  &__actions {
+    text-decoration: none;
+    outline:none;
+    .loginbutton {
+      width:400px;
+      height:40px;
+      background-color: #4169e1;
+      margin:10px 0px 0px 0px;
+      color:white;
+      text-decoration: none;
+      outline:none;
+    }
+  }
+  }
+}
+
+.signuppage {
+  text-decoration: none;
+  width:400px;
+  height:40px;
+  background-color: #2e8b57;
+  margin:0px 0px 0px 0px;
+  text-align: center;
+  color:white;
+  box-sizing: border-box;
+  padding:8px 0px 0px 0px;
+  position: relative;
+  left:260px;
+  bottom:5px;
+  .signuppagelink {
+    text-decoration: none;
+    width:400px;
+    height:40px;
+    background-color: #2e8b57;
+    margin:0px 0px 0px 0px;
+    text-align: center;
+    color:white;
+    box-sizing: border-box;
+    padding:8px 0px 0px 0px;
+    position: relative;
+    left:260px;
+    bottom:5px;  
+  }
+}
+
+.forgetpasswordpage {
+  position: relative;
+  left:260px;
+  bottom:5px;
+  box-sizing: border-box;
+  padding:8px 0px 0px 0px;
+  color:white;
+  text-decoration: none;
+  text-align: center;
+  width:400px;
+  height:40px;
+  background-color: #ff1493;
+  margin:0px 0px 0px 0px;
+  .forgetpasswordpagelink {
+  position: relative;
+  left:260px;
+  bottom:5px;
+  box-sizing: border-box;
+  padding:8px 0px 0px 0px;
+  color:white;
+  text-decoration: none;
+  text-align: center;
+  width:400px;
+  height:40px;
+  background-color: #ff1493;
+  margin:0px 0px 0px 0px;
+}}
