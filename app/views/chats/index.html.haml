@@ -90,4 +90,7 @@
     =form_with do |f|
       #textform.chatsindex__textform1
         = f.text_field :text,class:"chatsform",placeholder:"メッセージを入力してください",cols:"30",rows:"1"
+        = f.label :image,class:"image_upload" do
+          = fa_icon "image"
+          = f.file_field :image,class:"display_none"
         = f.submit "送信",class:"submit"
