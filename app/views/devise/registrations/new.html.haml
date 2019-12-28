@@ -1,26 +1,19 @@
-%h2 Sign up
+.login
+  .login__top
+    = link_to image_tag("logo.jpg",class:"logo"),root_path
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :nickname
-    %br/
-    = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
+  .login__form
+    .login__form__field
+      = f.text_field :nickname, autofocus: true, autocomplete: "nickname",placeholder:"ニックネーム",class:"formfield"
+    .login__form__field
+      = f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"メールアドレス",class:"formfield"
+    .login__form__field
+      - if @minimum_password_length
+        = f.password_field :password, autocomplete: "new-password",placeholder:"パスワード(#{@minimum_password_length}文字以上)",class:"formfield"
+    .login__form__field
+      = f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"パスワード（確認用）",class:"formfield"
+    .login__form__actions
+      = f.submit "登録",class:"loginbutton"
 = render "devise/shared/links"
 
