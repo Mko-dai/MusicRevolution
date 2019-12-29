@@ -15,6 +15,10 @@
     left:10px;
     .usericonimage {
       border-radius: 50%;
+      // 丸い枠線を白色にしたい
+        // outline: solid;
+        // outline-color: white;
+        // -moz-outline-radius: 100px;
     }
   }
   &__usernickname {
