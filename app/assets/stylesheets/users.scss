@@ -39,19 +39,20 @@
 .usershow2 {
   width:1171.09;
   position:relative;
-  top:200px;
+  top:210px;
   &__bar1 {
     background-color: #00fa9a;
-    
   }
   &__bar2 {
     background-color: #9acd32;
-    // position:relative;
-    // top:200px;
   }
   &__bar3 {
     background-color: #32cd32;
-    // position:relative;
-    // top:200px;
+  }
+}
+
+.usershowfollowandfollower {
+  &__image {
+    display:inline-block;
   }
 }

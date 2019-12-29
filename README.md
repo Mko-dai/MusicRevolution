@@ -37,7 +37,8 @@
 - has_many :artists, through: :users_artists    <!-- ユーザーは複数のアーティストをフォローできる(中間テーブルのusers_artistsテーブルを経由) -->
 - has_many :follows                             <!-- ユーザーは複数のユーザーをフォローできる -->
 - has_many :followers                           <!-- ユーザーは複数のユーザーにフォローされる -->
-- has_maniy :comments                           <!-- ユーザーは投稿に対し、複数のコメントを残すことができる -->
+- has_many :comments                           <!-- ユーザーは投稿に対し、複数のコメントを残すことができる -->
+- has_many :likes                              <!-- ユーザーはlikesテーブルを中間テーブルとし、複数の楽曲にいいねをつけることができる -->
 
 ## followsテーブル
 |Column|Type|Options|
@@ -73,6 +74,17 @@
 - belongs_to :user                     <!-- 一つの楽曲は一人のユーザーに帰属 -->
 - belongs_to :artist                   <!-- 一つの楽曲は一人のアーティストに帰属 -->
 - has_many :comments                   <!-- 一つの楽曲は複数のユーザーのコメントを所有-->
+- has_many :likes                      <!-- 一つの楽曲はlikesテーブルを中間テーブルとし、複数のユーザーからいいねをもらう-->
+
+## likesテーブル
+|Column|Type|Options|
+|-----|----|-------|
+|user|reference|null: false, foreign_key: true|     <!-- userの外部キー -->
+|audio|reference|null: false, foreign_key: true|   <!-- audioの外部キー -->
+
+### Association
+- belongs_to :user                     <!-- 一つのいいねは一人のユーザーに帰属 -->
+- belongs_to :audios                   <!-- 一つのいいねは一つの楽曲に帰属 -->
 
 ## commentsテーブル
 |Column|Type|Options|
