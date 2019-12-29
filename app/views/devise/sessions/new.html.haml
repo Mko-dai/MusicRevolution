@@ -1,0 +1,16 @@
+.login
+  .login__top
+    = link_to image_tag("logo.jpg",class:"logo"),root_path
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .login__form
+    .login__form__field
+      = f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"メールアドレス",class:"formfield"
+    .login__form__field
+      = f.password_field :password, autocomplete: "current-password",placeholder:"パスワード",class:"formfield"
+    -# - if devise_mapping.rememberable?
+    -#   .login__form__field
+    -#     = f.check_box :remember_me
+    -#     = f.label :remember_me
+    .login__form__actions
+      = f.submit "ログイン",class:"loginbutton"
+= render "devise/shared/links"

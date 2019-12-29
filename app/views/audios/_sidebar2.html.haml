@@ -11,6 +11,11 @@
   .index_sidebar2__home
     =link_to "" do
       %i.fab.fa-napster.fa-2x
-  .index_sidebar2__home
-    =link_to "" do
-      %i.fab.fa-napster.fa-2x
+  -if user_signed_in?
+    .index_sidebar2__home
+      = link_to destroy_user_session_path,method: :delete  do
+        %i.fas.fa-sign-out-alt.fa-2x
+  -else
+    .index_sidebar2__home
+      = link_to new_user_session_path do
+        %i.fab.fa-linkedin-in.fa-2x
