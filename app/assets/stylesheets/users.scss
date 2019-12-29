@@ -1,7 +1,9 @@
 .usershow {
   position:fixed;
+  z-index: 5;
+  height:200px;
   &__top {
-    width:98%;
+    width:1165px;
     height:200px;
     .userheaderimage {
       width:100%;
@@ -10,6 +12,8 @@
   
   }
   &__userimage {
+    height:120px;
+    width:120px;
     position: relative;
     bottom:130px;
     left:10px;
@@ -21,11 +25,33 @@
         // -moz-outline-radius: 100px;
     }
   }
-  &__usernickname {
-    position: relative;
-    bottom:180px;
-    left:130px;
-    color:white;
-    font-size: 30px;
+    p {
+      color:white;
+      font-size: 30px;
+      position: relative;
+      bottom:60px;
+      left:130px;
+  
+    }
+  }
+
+
+.usershow2 {
+  width:1171.09;
+  position:relative;
+  top:200px;
+  &__bar1 {
+    background-color: #00fa9a;
+    
+  }
+  &__bar2 {
+    background-color: #9acd32;
+    // position:relative;
+    // top:200px;
+  }
+  &__bar3 {
+    background-color: #32cd32;
+    // position:relative;
+    // top:200px;
   }
 }
