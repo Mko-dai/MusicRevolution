@@ -1,0 +1,21 @@
+#sidebaradd.index_sidebar1
+  .index_sidebar1__home
+    =link_to root_path do
+      %li ホーム
+  .index_sidebar1__home
+    =link_to "" do
+      %li グループ
+  .index_sidebar1__home
+    =link_to "" do
+      %li
+  .index_sidebar1__home
+    =link_to "" do
+      %li
+  -if user_signed_in?
+    .index_sidebar1__home
+      = link_to destroy_user_session_path,method: :delete do
+        %li ログアウト
+  -else
+    .index_sidebar1__home
+      = link_to new_user_session_path do
+        %li ログイン

@@ -1,0 +1,102 @@
+.show {
+  width:1000px;
+  height:200px;
+  position:fixed;
+  &__top {
+    width:200px;
+    height:200px;
+    box-sizing: border-box;
+    margin:0px 0px 0px 0px;
+    border-style:outset;
+    display:inline-block;
+    z-index: 3;
+    background-color: red;
+    position:fixed;
+  }
+
+  &__discription {
+    position: absolute;
+    left:220px;
+    &__about {
+      display: inline-block;
+    li {
+      display: inline-block;
+      width:100px;
+      list-style:none;
+      font-weight:bold;
+    }
+  }}
+}
+
+.users-list {
+  position: fixed;
+  top:300px;
+  font-weight: bold;
+  width:100%;
+  background-color: lavender;
+  z-index: 5;
+}
+
+#userpost {
+  position:absolute;
+  top:270px;
+}
+
+.comment1 {
+  position: fixed;
+  top:490px;
+  font-weight: bold;
+  z-index: 5;
+}
+
+.comment2 {
+  position: fixed;
+  top:330px;
+  font-weight: bold;
+  z-index: 5;
+}
+
+#userpost.usermusic {
+  position: fixed;
+  top:323px;
+  height:170px;
+}
+
+.comment__list {
+  background-color: lightgoldenrodyellow;
+  width:100vw;
+  
+}
+.user1 {
+  height:100vh;
+  position:absolute;
+  top:470px;
+  background-color: white;
+  &__image {
+    width:90%;
+  }
+  &__comment {
+    display:inline-block;
+    
+}}
+
+.user2 {
+  height:100vh;
+  position:absolute;
+  top:305px;
+  background-color: white;
+  &__image {
+    width:90%;
+  }
+  &__comment {
+    display:inline-block;
+    
+}}
+
+.fafafa {
+  background-color: white;
+  height:270px;
+  width:1440px;
+  position: fixed;
+  z-index:3
+}

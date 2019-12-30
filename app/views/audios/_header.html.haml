@@ -1,0 +1,20 @@
+.header
+  .index_header
+    .index_header__sidebaricon
+      %i.fas.fa-bars{width:"20px",height:"20px",onclick:"CloseSidebar()"}
+      = link_to image_tag("logo.jpg",class:"logo"),root_path
+    .index_header__searchbar
+      =form_with do |f|
+        .index_header__searchbar__change
+          %i.fas.fa-search{onclick:"ChaneForm()"}
+        #formmusic.index_header__searchbar__form
+          =f.text_field :title,class:"audiotitle1",id:"audiotitle11",placeholder:"曲名を入力してください",cols:"30",rows:"1"
+        #formartist.display_none
+          =f.text_field :title,class:"audiotitle1",id:"audiotitle12",placeholder:"アーティストを入力してください",cols:"30",rows:"1"     
+        #formchatgroup.display_none
+          =f.text_field :title,class:"audiotitle1",id:"audiotitle13",placeholder:"チャットグループを入力してください",cols:"30",rows:"1"
+    .index_header__post
+      = link_to "" do
+        %i.fab.fa-napster.fa-2x   
+    .index_header__userimage
+      = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""

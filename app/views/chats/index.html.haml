@@ -1,0 +1,93 @@
+= render partial: "audios/header-sidebar"
+#mainadd.main1
+  .groupname
+    %p TAKUYA∞様大好きグループ
+  .chatsspace
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaa
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+    .talk2
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+    .talk2
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""  
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaa
+    .talk
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+    .talk2
+      .user-chat
+        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+    .talk2
+      .user-chat
+        %p aaaaaaaaagfgfg
+      .user__image
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""  
+    .newchatsspace
+      -# ここに非同期通信でメッセージを追加
+    .yohaku2  
+  .chatsindex
+    =form_with do |f|
+      #textform.chatsindex__textform1
+        = f.text_field :text,class:"chatsform",placeholder:"メッセージを入力してください",cols:"30",rows:"1"
+        = f.submit "送信",class:"submit"
