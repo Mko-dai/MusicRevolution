@@ -1,0 +1,16 @@
+.artistshow {
+  position:fixed;
+  background-color: white;
+  z-index: 5;
+  height:225px;
+  width:100%;
+  &__artistimage{
+    height:200px;
+    width:100%;
+  }
+}
+
+.artistshowprofile {
+  position:relative;
+  top:225px;
+}

@@ -12,7 +12,7 @@
 ### 3.各グループはアーティストと結びつき、グループ内ではそのアーティストについてのチャットができる
 ### 4.rootページではフォローしているアーティストの楽曲（ユーザーが投稿した楽曲）と、フォローしているユーザーが投稿した楽曲（フォローしていないアーティストの楽曲も含む）が閲覧できる
 ### 5.ユーザーのマイページを作成し、ユーザーが情報を登録・編集・閲覧できるようにする
-### 6.アーティストの紹介ページを作成し、ユーザーがアーティストの情報を登録・編集・閲覧できるようにする
+### 6.アーティストの紹介ページを作成し、ユーザーがアーティストの情報を登録・編集・閲覧できるようにする(紹介項目もユーザーが自由に追加・削除できる)
 
 ## オプション機能
 ### 1.グループ内で他のユーザーがメッセージを入力中に"〇〇さんがメッセージを入力中です"と表示させる
@@ -37,10 +37,11 @@
 - has_many :groups, through: :members           <!-- ユーザーは複数のグループに所属(中間テーブルのmembersテーブルを経由) -->
 - has_many :chats                               <!-- ユーザーは複数のチャットを送信できる -->
 - has_many :artists, through: :users_artists    <!-- ユーザーは複数のアーティストをフォローできる(中間テーブルのusers_artistsテーブルを経由) -->
-- has_many :follows                             <!-- ユーザーは複数のユーザーをフォローできる -->
-- has_many :followers                           <!-- ユーザーは複数のユーザーにフォローされる -->
+- has_many :users                               <!-- ユーザーは複数のユーザーをフォローできる -->
+- has_many :users                               <!-- ユーザーは複数のユーザーにフォローされる -->
 - has_many :comments                           <!-- ユーザーは投稿に対し、複数のコメントを残すことができる -->
 - has_many :likes                              <!-- ユーザーはlikesテーブルを中間テーブルとし、複数の楽曲にいいねをつけることができる -->
+- has_many :images                             <!-- ユーザーはアーティストの画像を複数枚投稿できる -->
 
 ## followsテーブル
 |Column|Type|Options|
@@ -50,7 +51,7 @@
 
 ### Association
 - belongs_to :user                     <!-- ユーザーは複数のfollows情報を所有 -->
-- belongs_to :follower                 <!-- ユーザーはfollowsテーブルを中間テーブルとして、一人のフォローユーザーを所有 -->
+- belongs_to :follower                <!-- ユーザーはfollowsテーブルを中間テーブルとして、一人のフォローユーザーを所有 -->
 
 ## followersテーブル
 |Column|Type|Options|
@@ -104,13 +105,24 @@
 |Column|Type|Options|
 |-----|----|-------|
 |name|string|null:false|          <!-- アーティスト名 -->
-|image|string|-------|            <!-- アーティストの画像 -->
-|description|text|null:false|     <!-- アーティストの説明 -->
+|description|text|null:false|     <!-- アーティストの概要 -->
 
 ### Association
 - has_many :audios                           <!-- 一人のアーティストは複数の楽曲(ユーザーが投稿した楽曲)を所有 -->
 - has_many :groups                           <!-- 一人のアーティストは複数のユーザーチャットグループを所有 -->
 - has_many :users, through: :users_artists   <!-- 一人のアーティストは複数のユーザーにフォローされる(中間テーブルのusers_artistsテーブルを経由) -->
+- has_many :images　<!-- 一人のアーティストは複数の写真を所有 -->
+
+## imageテーブル
+|Column|Type|Options|
+|-----|----|-------|
+|artist|reference|null: false, foreign_key: true|     <!-- artistの外部キー -->
+|user|reference|null: false, foreign_key: true|       <!-- userの外部キー -->
+|image|text|-------|     <!-- アーティストの画像 -->
+
+### Association
+belongs_to :artist
+belongs_to :user
 
 ## users_artistsテーブル
 |Column|Type|Options|
