@@ -16,7 +16,6 @@ class AudiosController < ApplicationController
     
   def create
   @audio=Audio.new(audio_params)
-  binding.pry
   if @audio.save
     redirect_to root_path
   else

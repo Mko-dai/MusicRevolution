@@ -5,4 +5,67 @@
       font-size: 20px;
     }
   }
+  &__form {
+    text-align: center;
+    margin:10px 0px 0px 0px;
+    &__titlelabel  {
+      .audiotitlelabel {
+      
+      }
+    }
+    &__titleform  {
+      .audiotitleform {
+        width:300px;
+      }
+    }
+    &__categorylabel  {
+      .audiocategorylabel {
+
+      }
+    }
+    &__categoryform  {
+      .audiocategoryform {
+        width:300px;
+      }
+    }
+    &__descriptionlabel  {
+      .audiodiscriptionlabel {
+
+      }
+    }
+    &__descriptionform  {
+      // white-space: pre-wrap;
+      // width:700px;
+      // height:300px;
+      .audiodiscriptionform {
+        width:700px;
+        height:100px;
+        resize:none;
+        padding:5px;
+        
+        //   align:justify;
+      //   padding:0px 5px 55px 5px;
+        box-sizing: border-box;
+      // //   padding:0px;
+        
+      }
+    }
+    &__imagelabel  {
+      
+    }
+    &__imageform  {
+      
+    }
+    &__filelabel  {
+      
+    }
+    &__fileform  {
+      
+    }
+    &__send  {
+      
+    }
+
+
+  }
 }
