@@ -1,0 +1,18 @@
+= render partial: "header-sidebar"
+.yohaku
+#mainadd.main1
+  .audiosnew
+    .audiosnew__top
+      %p 楽曲投稿
+    .audiosnew__form
+      = form_with(model:@audio,local: true) do |f|
+        .audiosnew__form__title
+          =f.label :title,"タイトル"
+          =f.text_field :title,placeholder:"タイトルを入力してください"
+        .audiosnew__form__category
+          =f.label :category,"カテゴリー"
+          =f.text_field :category,placeholder:"カテゴリーを入力してください"
+        .audionsnew__form__image
+          =f.label :image,"楽曲の画像"
+          =f.
+      

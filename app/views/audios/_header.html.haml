@@ -14,7 +14,7 @@
         #formchatgroup.display_none
           =f.text_field :title,class:"audiotitle1",id:"audiotitle13",placeholder:"チャットグループを入力してください",cols:"30",rows:"1"
     .index_header__post
-      = link_to "" do
-        %i.fab.fa-napster.fa-2x   
+      = link_to new_audio_path do
+        %i.fas.fa-cloud-upload-alt.fa-2x   
     .index_header__userimage
       = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""

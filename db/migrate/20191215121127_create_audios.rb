@@ -7,8 +7,6 @@ class CreateAudios < ActiveRecord::Migration[5.2]
       t.string         :file,         null: false
       t.text           :description
       t.string         :artist
-      t.references     :user,         null: false,   foreign_key: true
-      t.references     :artist,                      foreign_key: true
       t.timestamps
     end
   end
