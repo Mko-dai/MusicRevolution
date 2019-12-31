@@ -21,7 +21,6 @@
     position:fixed;
     top:690px;
     left:300px;
-    // text-align: center;
     box-sizing: border-box;
     padding:25px 0px 0px 40px;
     border-radius: 20%;
@@ -29,6 +28,12 @@
       height:50px;
       width:600px;
       outline: none;
+      box-sizing: border-box;
+      padding:0px 30px 0px 5px;
+    }
+    .image_upload {
+      position:relative;
+      right:30px;
     }
     .submit {
       height:50px;
@@ -45,7 +50,6 @@
     position:fixed;
     top:690px;
     left:100px;
-    // text-align: center;
     box-sizing: border-box;
     padding:25px 0px 0px 40px;
     border-radius: 20%;
@@ -53,6 +57,10 @@
       height:50px;
       width:600px;
       outline: none;
+    }
+    .image_upload {
+      position:relative;
+      right:30px;
     }
     .submit {
       height:50px;
