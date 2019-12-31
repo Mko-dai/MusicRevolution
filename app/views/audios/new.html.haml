@@ -5,14 +5,24 @@
     .audiosnew__top
       %p 楽曲投稿
     .audiosnew__form
-      = form_with(model:@audio,local: true) do |f|
+      = form_with(model:@audio,local: true,multipart: true) do |f|
         .audiosnew__form__title
           =f.label :title,"タイトル"
           =f.text_field :title,placeholder:"タイトルを入力してください"
+        -# .audiosnew__form__category
+        -#   =f.label :artist,"アーティスト"
+        -#   =f.text_field :artist,placeholder:"アーティストを入力してください"
         .audiosnew__form__category
           =f.label :category,"カテゴリー"
           =f.text_field :category,placeholder:"カテゴリーを入力してください"
-        .audionsnew__form__image
+        .audiosnew__form__description
+          =f.label :description,"あなたの一押しポイント"
+          =f.text_field :description
+        .audiosnew__form__image
           =f.label :image,"楽曲の画像"
-          =f.
-      
+          =f.file_field :image
+        .audiosnew__form__file
+          =f.label :file,"音源"
+          =f.file_field :file
+        .audiosnew__form__send
+          = f.submit "送信",class:"submit"

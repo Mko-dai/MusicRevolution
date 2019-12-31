@@ -6,7 +6,7 @@ class CreateAudios < ActiveRecord::Migration[5.2]
       t.string         :image
       t.string         :file,         null: false
       t.text           :description
-      t.string         :artist
+      # t.string         :artist
       t.timestamps
     end
   end

@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2019_12_30_145211) do
     t.string "image"
     t.string "file", null: false
     t.text "description"
-    t.string "artist"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false

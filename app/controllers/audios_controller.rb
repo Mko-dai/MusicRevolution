@@ -15,6 +15,13 @@ class AudiosController < ApplicationController
   end
     
   def create
+  @audio=Audio.new(audio_params)
+  binding.pry
+  if @audio.save
+    redirect_to root_path
+  else
+    redirect_to new_audio_path
+  end
   end
 
   def update
@@ -26,4 +33,9 @@ class AudiosController < ApplicationController
   def edit
   end
 
+  private
+
+  def audio_params
+    params.require(:audio).permit(:title,:category,:image,:file,:description).merge(user_id: current_user.id,artist_id:current_user.id)
+  end
 end
