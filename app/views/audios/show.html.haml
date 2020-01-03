@@ -4,24 +4,45 @@
   .fafafa
     .show
       .show__top
-        =image_tag("logo.jpg",class:"musicview")
+        -if @audio.image.url.present?
+          =image_tag(@audio.image.url,class:"musicview")
+        -else
+          =image_tag("logo.jpg",class:"musicview")
+        .jkjk
+          = audio_tag(@audio.file.mp3.url,class:"musicstart")
       .show__discription   
         .show__discription__about
           %li タイトル
-          %p 7th trigger
+          %p 
+            = @audio.title
         .show__discription__about
           %li アーティスト
-          %p UVERworld
+          %p 
+            = @audio.artistname
         .show__discription__about
           %li カテゴリー
-          %p ロック
+          - if @audio.category.present?
+            %p 
+              = @audio.category
+          - else
+            %p 
+              なし
         %br
         %br
         .show__discription__about
           .user__image
+            -# - if @audio.user.image.present?
+            -#   = link_to image_tag(@audio.user.image,class:"userphoto"),""
+            -# - else
             = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
-            〇〇さんの一押しポイント
-          %p 最高の曲ですああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+            = @audio.user.nickname
+            さんの一押しポイント
+          - if @audio.description.present?
+            %p 
+              = @audio.description
+          - else
+            %p
+              なし
     .users-list{onclick:"UserPost()"}
       〇〇さんの最近の投稿
       %i#toukouyajirushi.fas.fa-chevron-down

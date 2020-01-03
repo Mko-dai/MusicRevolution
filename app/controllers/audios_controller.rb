@@ -7,6 +7,7 @@ class AudiosController < ApplicationController
 
   def show     #楽曲詳細ページ
   #ユーザーのその他の投稿項目が最新の8項目のみ表示されるようにする
+  @audio = Audio.find(params[:id])
   end
   #mp3ファイル取り出しの例
     # audio = Audio.find(1)

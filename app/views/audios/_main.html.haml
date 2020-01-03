@@ -6,9 +6,9 @@
     .music-form
       -# link_toの中は、楽曲の画像もしくは再生ボタン 
       -if audio.image.url.present? 
-        = link_to image_tag(audio.image.url,class:"musicview1"),""
+        = link_to image_tag(audio.image.url,class:"musicview1"),audio_path(audio.id)
       - else
-        = link_to image_tag("og_image__pvk21jd9bj22.png",class:"musicview1"),""
+        = link_to image_tag("logo.jpg",class:"musicview1"),audio_path(audio.id)
       %li 
         = audio.title
       %li 
