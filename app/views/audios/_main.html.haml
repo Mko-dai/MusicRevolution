@@ -2,100 +2,17 @@
   .yohaku
     .annnai
       投稿の詳細を表示するにはクリックしてください
-  .music-form
-    -# link_toの中は、楽曲の画像もしくは再生ボタン 
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
-  .music-form
-    = link_to image_tag("logo.jpg",class:"musicview1"),""
-    %li 曲名
-    %li アーティスト名
-    %li 投稿者
-    %li 100いいね
+  - @audios.each do |audio|
+    .music-form
+      -# link_toの中は、楽曲の画像もしくは再生ボタン 
+      -if audio.image.url.present? 
+        = link_to image_tag(audio.image.url,class:"musicview1"),""
+      - else
+        = link_to image_tag("og_image__pvk21jd9bj22.png",class:"musicview1"),""
+      %li 
+        = audio.title
+      %li 
+        = audio.artistname
+      %li 
+        = audio.user.nickname
+      %li 100いいね
