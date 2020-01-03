@@ -9,7 +9,7 @@ class Audio < ApplicationRecord
   has_many :users,      through: :likes
 
   validates :title, presence: true
-  validates :file,  presence: true
+  # validates :file,  presence: true
 
 
 end

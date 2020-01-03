@@ -3,69 +3,133 @@
     p {
       text-align: center;
       font-size: 20px;
+      font-weight: bold;
     }
   }
   &__form {
     text-align: center;
     margin:10px 0px 0px 0px;
     &__titlelabel  {
+      margin:5px 0px 0px 0px;
+      position:relative;
+      right:300px;
       .audiotitlelabel {
       
       }
     }
     &__titleform  {
+      margin:5px 0px 0px 0px;
+      position:relative;
+      right:200px;
       .audiotitleform {
         width:300px;
+        outline: none;
+
+      }
+    }
+    &__artistlabel {
+      margin:5px 0px 0px 0px;
+      position:relative;
+      right:285px;
+    }
+    &__artistform {
+      margin:5px 0px 0px 0px;
+      position:relative;
+      right:200px;
+      .audioartistform {
+        width:300px;
+        outline: none;
       }
     }
     &__categorylabel  {
+      margin:5px 0px 0px 0px;
+      position:relative;
+      right:312px;
       .audiocategorylabel {
 
       }
     }
     &__categoryform  {
+      margin:5px 0px 0px 0px;
+      position:relative;
+      right:200px;
       .audiocategoryform {
         width:300px;
+        outline: none;
+
       }
     }
     &__descriptionlabel  {
+      margin:5px 0px 0px 0px;
+      position:relative;
+      right:265px;
       .audiodiscriptionlabel {
 
       }
     }
     &__descriptionform  {
-      // white-space: pre-wrap;
-      // width:700px;
-      // height:300px;
+      margin:5px 0px 0px 0px;
       .audiodiscriptionform {
         width:700px;
         height:100px;
         resize:none;
         padding:5px;
-        
-        //   align:justify;
-      //   padding:0px 5px 55px 5px;
-        box-sizing: border-box;
-      // //   padding:0px;
-        
+        box-sizing: border-box;        
+        outline: none;
+        border-color: #d3d3d3;
       }
     }
     &__imagelabel  {
-      
+      margin:5px 0px 0px 0px;
+      position:relative;
+      right:130px;
+      display:inline-block;
     }
     &__imageform  {
-      
+      margin:5px 0px 0px 0px;
+      position:relative;
+      right:0px;
+      .audioimageform {
+        border-style: solid;
+        border-color: gray;
+        border-width: 1px;
+        outline: none;
+
+      }
     }
     &__filelabel  {
-      
+      margin:5px 0px 0px 0px;
+      position:relative;
+      right:80px;
+      display: inline-block;
     }
     &__fileform  {
-      
+      margin:5px 0px 0px 0px;
+      position:relative;
+      right:130px;
+      .audiomusicform {
+      border-style: solid;
+      border-color: gray;
+      border-width: 1px;
+      outline: none;
+  
+    }
     }
     &__send  {
-      
+      margin:20px 0px 0px 0px;
+      position:relative;
+      right:300px;
+      .submit {
+        background-color:orange;
+        color:white;
+        width:100px;
+        height:40px;
+        outline: none;
+
+      }
     }
 
 
   }
 }
+

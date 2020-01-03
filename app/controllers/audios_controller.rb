@@ -15,6 +15,7 @@ class AudiosController < ApplicationController
   end
     
   def create
+  # DB登録時、artistnameまたはartist_idが入っていれば登録できるようにする！
   @audio=Audio.new(audio_params)
   if @audio.save
     redirect_to root_path
@@ -35,6 +36,6 @@ class AudiosController < ApplicationController
   private
 
   def audio_params
-    params.require(:audio).permit(:title,:category,:image,:file,:description).merge(user_id: current_user.id,artist_id:current_user.id)
+    params.require(:audio).permit(:title,:category,:image,:file,:description,:artistname).merge(user_id: current_user.id,artist_id:current_user.id)
   end
 end

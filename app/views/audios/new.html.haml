@@ -8,11 +8,14 @@
       = form_with(model:@audio,local: true,multipart: true) do |f|
         .audiosnew__form__titlelabel
           =f.label :title,"タイトル",class:"audiotitlelabel"
+          =f.label :title,"必須",class:"audiohissulabel"
         .audiosnew__form__titleform
           =f.text_field :title,placeholder:"タイトルを入力してください",class:"audiotitleform"
-        -# .audiosnew__form__category
-        -#   =f.label :artist,"アーティスト"
-        -#   =f.text_field :artist,placeholder:"アーティストを入力してください"
+        .audiosnew__form__artistlabel
+          =f.label :artistname,"アーティスト"
+          =f.label :artistname,"必須",class:"audiohissulabel"
+        .audiosnew__form__artistform
+          =f.text_field :artistname,placeholder:"アーティストを入力してください",class:"audioartistform"
         .audiosnew__form__categorylabel
           =f.label :category,"カテゴリー",class:"audiocategorylabel"
         .audiosnew__form__categoryform
@@ -23,11 +26,17 @@
           =f.text_area :description,class:"audiodiscriptionform"
         .audiosnew__form__imagelabel
           =f.label :image,"楽曲の画像"
-        .audiosnew__form__imageform
-          =f.file_field :image
+          =f.label :image,class:"audioimagemusicform" do
+            .audiosnew__form__imageform
+              %i.far.fa-image.fa-2x
+              =f.file_field :image,class:"display_none"
         .audiosnew__form__filelabel
           =f.label :file,"音源"
-        .audiosnew__form__fileform
-          =f.file_field :file
+          =f.label :file,"必須",class:"audiohissulabel"
+          =f.label :file,"⚠️mp3ファイルのみ投稿できます！"
+          =f.label :file,class:"audiofileform" do
+            .audiosnew__form__fileform
+              %i.fas.fa-music.fa-2x   
+              =f.file_field :file,class:"display_none"
         .audiosnew__form__send
-          = f.submit "送信",class:"submit"
+          = f.submit "投稿",class:"submit"
