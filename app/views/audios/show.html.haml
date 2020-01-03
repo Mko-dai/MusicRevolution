@@ -47,22 +47,16 @@
       〇〇さんの最近の投稿
       %i#toukouyajirushi.fas.fa-chevron-down
     #userpost.display_none
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
+      - @useraudio.each do |useraudio|
+        .music-form
+          -if useraudio.image.url.present?
+            = link_to image_tag(useraudio.image.url,class:"musicview1"),""
+          -else
+            = link_to image_tag("logo.jp",class:"musicview1"),""
+          %li 
+            = useraudio.title
+          %li 
+            = useraudio.artistname
   #usercomment.comment2
     .comment__list{onclick:"CommentPost()"}
       コメント一覧
