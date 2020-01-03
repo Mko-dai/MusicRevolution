@@ -2,6 +2,7 @@ class AudiosController < ApplicationController
   before_action :authenticate_user!,except: [:index,:show]
 
   def index    #トップページ
+    @audios = Audio.order("created_at DESC")
   end
 
   def show     #楽曲詳細ページ
