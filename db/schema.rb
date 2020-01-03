@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_30_145211) do
+ActiveRecord::Schema.define(version: 2020_01_03_104614) do
 
   create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -35,11 +35,80 @@ ActiveRecord::Schema.define(version: 2019_12_30_145211) do
   create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.index ["group_id"], name: "index_chats_on_group_id"
+    t.index ["user_id"], name: "index_chats_on_user_id"
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "audio_id"
+    t.index ["audio_id"], name: "index_comments_on_audio_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "followers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_followers_on_user_id"
+  end
+
+  create_table "follows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "follower_id"
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
+    t.index ["user_id"], name: "index_follows_on_user_id"
   end
 
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "artist_id"
+    t.index ["artist_id"], name: "index_groups_on_artist_id"
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "artist_id"
+    t.index ["artist_id"], name: "index_images_on_artist_id"
+    t.index ["user_id"], name: "index_images_on_user_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "audio_id"
+    t.index ["audio_id"], name: "index_likes_on_audio_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.index ["group_id"], name: "index_members_on_group_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
+  end
+
+  create_table "user_artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "artist_id"
+    t.index ["artist_id"], name: "index_user_artists_on_artist_id"
+    t.index ["user_id"], name: "index_user_artists_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,4 +126,20 @@ ActiveRecord::Schema.define(version: 2019_12_30_145211) do
 
   add_foreign_key "audios", "artists"
   add_foreign_key "audios", "users"
+  add_foreign_key "chats", "groups"
+  add_foreign_key "chats", "users"
+  add_foreign_key "comments", "audios"
+  add_foreign_key "comments", "users"
+  add_foreign_key "followers", "users"
+  add_foreign_key "follows", "followers"
+  add_foreign_key "follows", "users"
+  add_foreign_key "groups", "artists"
+  add_foreign_key "images", "artists"
+  add_foreign_key "images", "users"
+  add_foreign_key "likes", "audios"
+  add_foreign_key "likes", "users"
+  add_foreign_key "members", "groups"
+  add_foreign_key "members", "users"
+  add_foreign_key "user_artists", "artists"
+  add_foreign_key "user_artists", "users"
 end

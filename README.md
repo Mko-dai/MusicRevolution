@@ -28,6 +28,8 @@
 |-----|----|-------|
 |nickname|string|null: false|    <!-- ニックネーム -->
 |email|string|null: false|       <!-- メールアドレス -->
+|image|string|------|            <!-- プロフィール画像 -->
+|background|string|-----|        <!-- 背景画像 -->
 |password|string|null: false|    <!-- パスワード -->
 |introduction|text|-------|      <!-- プロフィール文 -->
 
@@ -37,8 +39,8 @@
 - has_many :groups, through: :members           <!-- ユーザーは複数のグループに所属(中間テーブルのmembersテーブルを経由) -->
 - has_many :chats                               <!-- ユーザーは複数のチャットを送信できる -->
 - has_many :artists, through: :users_artists    <!-- ユーザーは複数のアーティストをフォローできる(中間テーブルのusers_artistsテーブルを経由) -->
-- has_many :users                               <!-- ユーザーは複数のユーザーをフォローできる -->
-- has_many :users                               <!-- ユーザーは複数のユーザーにフォローされる -->
+- has_many :follows                               <!-- ユーザーは複数のユーザーをフォローできる -->
+- has_many :follwers                               <!-- ユーザーは複数のユーザーにフォローされる -->
 - has_many :comments                           <!-- ユーザーは投稿に対し、複数のコメントを残すことができる -->
 - has_many :likes                              <!-- ユーザーはlikesテーブルを中間テーブルとし、複数の楽曲にいいねをつけることができる -->
 - has_many :images                             <!-- ユーザーはアーティストの画像を複数枚投稿できる -->
@@ -113,7 +115,7 @@
 - has_many :users, through: :users_artists   <!-- 一人のアーティストは複数のユーザーにフォローされる(中間テーブルのusers_artistsテーブルを経由) -->
 - has_many :images　<!-- 一人のアーティストは複数の写真を所有 -->
 
-## imageテーブル
+## imagesテーブル
 |Column|Type|Options|
 |-----|----|-------|
 |artist|reference|null: false, foreign_key: true|     <!-- artistの外部キー -->
