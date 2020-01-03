@@ -38,3 +38,7 @@ if (commentpost.className == "display_none" && userpost.className == "display_no
     commentyajirushi.className = "fas fa-chevron-down"
   }
 }
+
+audiojs.events.ready(function() {
+  var as = audiojs.createAll();
+});
