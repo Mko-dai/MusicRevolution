@@ -157,8 +157,10 @@
 }
 .annnai {
   position:fixed;
+  top:55px;
   width: 1440px;
   background-color: white;
-  margin:10px;
+  // margin:10px;
   color:tomato;
+  z-index: 10;
 }
