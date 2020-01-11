@@ -19,7 +19,15 @@
     left:220px;
     &__about {
       display: inline-block;
-    li {
+      &__edit {
+        
+        a {
+          text-decoration: none;        
+          color:gray;
+          margin:10px;
+        }
+      }
+      li {
       display: inline-block;
       width:100px;
       list-style:none;
