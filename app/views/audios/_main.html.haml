@@ -14,5 +14,5 @@
       %li 
         = audio.artistname
       %li 
-        = audio.user.nickname
+        = link_to audio.user.nickname,"/users/#{audio.user.id}"
       %li 100いいね

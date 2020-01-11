@@ -6,231 +6,34 @@
       = link_to image_tag("icon-1328421_1920.jpg",class:"userheaderimage"),""
     .usershow__userimage
       = link_to image_tag("member_photo_noimage.png",class:"usericonimage"),""
-      %p 菅田将暉
+      %p
+        = @user.nickname
+    -if @user == current_user 
+      .usershow__edit
+        = link_to "プロフィールを編集する","/users/#{current_user.id}/edit",class:"edit"
   .userprofile
     %p#profile プロフィール
-    %p いえええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええええい
+    %p
+      -if @user.introduction.present?
+        = @user.introduction
+      - else
+        なし
   .usershow2
     .usershow2__bar1{onclick:"Usershow2Bar1()"}
-      〇〇さんの投稿
+      = @user.nickname
+      さんの投稿
       %i#toukouyajirushi2.fas.fa-chevron-down
     #usershow2bar1.display_none
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-        %li 投稿日
-        %li 評価
+      -@audios.each do |audio|
+        .music-form
+          = link_to image_tag(audio.image.url,class:"musicview1"),"/audios/#{audio.id}"
+          %li 
+            = audio.title
+          %li 
+            = audio.artistname
+          %li 
+            = audio.updated_at
+          %li 100いいね
     .usershow2__bar2{onclick:"Usershow2Bar2()"}
       100フォロー
       %i#toukouyajirushi3.fas.fa-chevron-down

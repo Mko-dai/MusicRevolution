@@ -1,9 +1,21 @@
+// ユーザープロフィールページ
 .usershow {
   position:fixed;
   z-index: 5;
   height:200px;
   width:100%;
   background-color: white;
+  &__edit {
+    position:relative;
+    bottom:230px;
+    left:140px;
+    background-color: orange;
+    width:180px;
+    .edit {
+      text-decoration: none;
+      color:white;
+    }
+  }
   &__top {
     width:1165px;
     height:200px;
@@ -19,6 +31,11 @@
     position: relative;
     bottom:130px;
     left:10px;
+    p {
+      background-color: green;
+      font-size: 30px;
+      text-align: center;
+    }
     .usericonimage {
       border-radius: 50%;
       // 丸い枠線を白色にしたい

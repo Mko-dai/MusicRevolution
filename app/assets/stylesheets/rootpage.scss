@@ -41,11 +41,15 @@
   }
   &__post {
     display: inline-block; 
+    a {
+      position:relative;
+      bottom:1px;
+      z-index:-1;
+    }
     i.fas.fa-cloud-upload-alt.fa-2x::before {
       color:gray;
       position:relative;
       left:700px;
-      
     }
   }
   &__userimage{
@@ -53,7 +57,7 @@
     position:relative;
     top:6px;
     left:730px;
-    
+    a {z-index: 5;}
   }
 }
 
