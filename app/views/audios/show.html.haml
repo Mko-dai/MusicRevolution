@@ -29,7 +29,7 @@
           .show__discription__about
             .show__discription__about__edit
               = link_to "編集する", "/audios/#{@audio.id}/edit"
-              = link_to "削除する", "/audios/#{@audio.id}/",method: :delete    
+              = link_to "削除する", "/audios/#{@audio.id}/",method: :delete,onClick:"alert('削除しました');"
         %br
         %br
         .show__discription__about
