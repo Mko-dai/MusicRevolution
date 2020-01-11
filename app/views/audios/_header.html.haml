@@ -19,8 +19,8 @@
       .index_header__userimage
         -if user_signed_in?
           -if current_user.userimage.present?
-            = link_to image_tag(current_user.userimage,class:"userphoto"),"/users/#{current_user.id}",method: :get
+            = link_to image_tag("#{current_user.userimage}",class:"userphoto"),"/users/#{current_user.id}"
           -else
-            = link_to image_tag("member_photo_noimage.png",class:"userphoto"),"/users/#{current_user.id}",method: :get
+            = link_to image_tag("member_photo_noimage.png",class:"userphoto"),"/users/#{current_user.id}"
         -else 
           = link_to image_tag("member_photo_noimage.png",class:"userphoto"),new_user_session_path

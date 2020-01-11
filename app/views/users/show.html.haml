@@ -3,9 +3,15 @@
 #mainadd.main1
   .usershow
     .usershow__top
-      = link_to image_tag("icon-1328421_1920.jpg",class:"userheaderimage"),""
+      -if @user.backgroundimage.present?
+        = image_tag("#{@user.backgroundimage}",class:"userheaderimage")
+      -else
+        = image_tag("icon-1328421_1920.jpg",class:"userheaderimage")
     .usershow__userimage
-      = link_to image_tag("member_photo_noimage.png",class:"usericonimage"),""
+      -if @user.userimage.present?
+        = image_tag("#{@user.userimage}",class:"usericonimage")
+      -else
+        = image_tag("member_photo_noimage.png",class:"usericonimage")
       %p
         = @user.nickname
     -if @user == current_user 
@@ -564,4 +570,4 @@
         = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
     .login
       .login__top
-        = link_to image_tag("logo.jpg",class:"logo"),root_path
+        = image_tag("logo.jpg",class:"logo")

@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  mount_uploader :userimage,ImageUploader
+  mount_uploader :backgroundimage,ImageUploader
+   
+
   has_many :audios                              # ユーザーは複数の楽曲データを所有 -->
   has_many :groups, through: :members           # ユーザーは複数のグループに所属(中間テーブルのmembersテーブルを経由) -->
   has_many :chats                               # ユーザーは複数のチャットを送信できる -->

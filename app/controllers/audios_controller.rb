@@ -30,7 +30,7 @@ class AudiosController < ApplicationController
 
   def update
     if @audio.update(audio_params)
-      redirect_to root_path
+      redirect_to "/audios/#{@audio.id}"
     end
   end
 
