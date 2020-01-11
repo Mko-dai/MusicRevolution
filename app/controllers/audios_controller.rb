@@ -8,7 +8,8 @@ class AudiosController < ApplicationController
   def show     #楽曲詳細ページ
   #ユーザーのその他の投稿項目が最新の8項目のみ表示されるようにする
   @audio = Audio.find(params[:id])
-  end
+  @useraudio = Audio.where(user_id:@audio.user_id).order("created_at DESC")
+end
   #mp3ファイル取り出しの例
     # audio = Audio.find(1)
     # audio.file.mp3.url →/uploads/audio/file/1/sample1.mp3
@@ -38,6 +39,6 @@ class AudiosController < ApplicationController
   private
 
   def audio_params
-    params.require(:audio).permit(:title,:category,:image,:file,:description,:artistname).merge(user_id: current_user.id,artist_id:current_user.id)
+    params.require(:audio).permit(:title,:category,:image,:file,:description,:artistname).merge(user_id: current_user.id,artist_id:1)
   end
 end

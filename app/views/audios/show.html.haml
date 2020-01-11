@@ -8,8 +8,6 @@
           =image_tag(@audio.image.url,class:"musicview")
         -else
           =image_tag("logo.jpg",class:"musicview")
-        .jkjk
-          = audio_tag(@audio.file.mp3.url,class:"musicstart")
       .show__discription   
         .show__discription__about
           %li タイトル
@@ -43,26 +41,23 @@
           - else
             %p
               なし
+          .jkjk
+            = audio_tag(@audio.file.mp3.url,class:"musicstart")
+
     .users-list{onclick:"UserPost()"}
       〇〇さんの最近の投稿
       %i#toukouyajirushi.fas.fa-chevron-down
     #userpost.display_none
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
-      .music-form
-        = link_to image_tag("logo.jpg",class:"musicview1"),""
-        %li 曲名
-        %li アーティスト名
+      - @useraudio.each do |useraudio|
+        .music-form
+          -if useraudio.image.url.present?
+            = link_to image_tag(useraudio.image.url,class:"musicview1"),""
+          -else
+            = link_to image_tag("logo.jp",class:"musicview1"),""
+          %li 
+            = useraudio.title
+          %li 
+            = useraudio.artistname
   #usercomment.comment2
     .comment__list{onclick:"CommentPost()"}
       コメント一覧
@@ -93,3 +88,7 @@
         #textform.chatsindex__textform1
           = f.text_field :text,class:"chatsform",placeholder:"コメントを入力してください",cols:"30",rows:"1"
           = f.submit "送信",class:"submit"
+    %script
+      audiojs.events.ready(function() {
+      var as = audiojs.createAll();
+      });
