@@ -1,0 +1,36 @@
+= render partial: "audios/header-sidebar"
+.yohaku
+#mainadd.main1
+  .audiosnew
+    .audiosnew__top
+      %p プロフィール編集
+    .audiosnew__form
+      = form_with(model:current_user,local: true,multipart: true) do |f|
+        .audiosnew__form__titlelabel
+          =f.label :nickname,"ニックネーム",class:"audiotitlelabel",id:"usernicknamelabel"
+          =f.label :nickname,"必須",class:"audiohissulabel",id:"usernicknamehissu"
+        .audiosnew__form__titleform
+          =f.text_field :nickname,placeholder:"ニックネームを入力してください",class:"audiotitleform"
+        .audiosnew__form__artistlabel
+          =f.label :email,"email",id:"useremaillabel"
+          =f.label :email,"必須",class:"audiohissulabel",id:"useremailhissu"
+        .audiosnew__form__artistform
+          =f.text_field :email,placeholder:"メールアドレスを入力してください",class:"audioartistform"
+        .audiosnew__form__descriptionlabel
+          =f.label :introduction,"自己紹介",class:"audiodescriptionlabel",id:"userintroductionlabel"
+        .audiosnew__form__descriptionform
+          =f.text_area :introduction,class:"audiodiscriptionform"
+        #userimagelabel.audiosnew__form__imagelabel
+          =f.label :userimage,"ユーザー画像"
+          =f.label :userimage,class:"audioimagemusicform",id:"imageupload" do
+            .audiosnew__form__imageform
+              %i.fas.fa-user.fa-2x
+              =f.file_field :userimage,class:"display_none"
+        #userbackgroundimagelabel.audiosnew__form__imagelabel
+          =f.label :backgroundimage,"ヘッダー画像"
+          =f.label :backgroundimage,class:"audioimagemusicform",id:"imageupload" do
+            .audiosnew__form__imageform
+              %i.far.fa-image.fa-2x
+              =f.file_field :backgroundimage,class:"display_none"
+        .audiosnew__form__send
+          = f.submit "投稿",class:"submit"
