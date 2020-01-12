@@ -25,11 +25,12 @@
           - else
             %p 
               なし
-        - if current_user.id == @audio.user.id 
-          .show__discription__about
-            .show__discription__about__edit
-              = link_to "編集する", "/audios/#{@audio.id}/edit"
-              = link_to "削除する", "/audios/#{@audio.id}/",method: :delete,onClick:"alert('削除しました');"
+        -if user_signed_in?
+          - if current_user.id == @audio.user.id 
+            .show__discription__about
+              .show__discription__about__edit
+                = link_to "編集する", "/audios/#{@audio.id}/edit"
+                = link_to "削除する", "/audios/#{@audio.id}/",method: :delete,onClick:"alert('削除しました');"
         %br
         %br
         .show__discription__about
