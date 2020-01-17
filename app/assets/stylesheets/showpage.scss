@@ -17,6 +17,10 @@
   &__discription {
     position: absolute;
     left:220px;
+    &__under {
+      position: relative;
+      top:210px;
+    }
     &__about {
       display: inline-block;
       &__edit {
@@ -36,8 +40,8 @@
 }
 
 .users-list {
-  position: fixed;
-  top:300px;
+  // position: fixed;
+  // top:300px;
   font-weight: bold;
   width:100%;
   background-color: lavender;
@@ -45,40 +49,40 @@
 }
 
 #userpost {
-  position:absolute;
-  top:270px;
+  // position:absolute;
+  // top:270px;
 }
 
 .comment1 {
-  position: fixed;
-  top:490px;
+  // position: fixed;
+  // top:490px;
   font-weight: bold;
   z-index: 5;
 }
 
 .comment2 {
-  position: fixed;
-  top:330px;
+  // position: fixed;
+  // top:330px;
   font-weight: bold;
   z-index: 5;
 }
 
 #userpost.usermusic {
   background-color: white;
-  position: fixed;
-  top:323px;
+  // position: fixed;
+  // top:323px;
   height:170px;
 }
 
 .comment__list {
   background-color: lightgoldenrodyellow;
-  width:100vw;
+  width:100%;
   
 }
 .user1 {
   height:100vh;
-  position:absolute;
-  top:470px;
+  // position:absolute;
+  // top:470px;
   background-color: white;
   &__image {
     width:90%;
@@ -90,8 +94,8 @@
 
 .user2 {
   height:100vh;
-  position:absolute;
-  top:305px;
+  // position:absolute;
+  // top:305px;
   background-color: white;
   &__image {
     width:90%;
@@ -103,7 +107,7 @@
 
 .fafafa {
   background-color: white;
-  height:270px;
+  height:194px;
   width:1440px;
   position: fixed;
   z-index:3

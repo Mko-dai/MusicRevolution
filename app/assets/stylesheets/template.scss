@@ -16,7 +16,7 @@
 .music-form {
   display:inline-block;
   width:150px;
-  height:200px;
+  height:150px;
   box-sizing: border-box;
   margin:10px 10px 10px 0px;
   background-color: white;
@@ -126,9 +126,11 @@
 
 .jkjk {
   width:500px;
-  height:100px;
+  height:48px;
   color: #f5f5f5;
   z-index: 10;
+  position: relative;
+  top:120px;
 }
 
 // .audiojs .time { 

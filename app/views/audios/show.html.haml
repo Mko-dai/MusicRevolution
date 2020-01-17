@@ -31,24 +31,22 @@
               .show__discription__about__edit
                 = link_to "編集する", "/audios/#{@audio.id}/edit"
                 = link_to "削除する", "/audios/#{@audio.id}/",method: :delete,onClick:"alert('削除しました');"
-        %br
-        %br
-        .show__discription__about
-          .user__image
-            - if @audio.user.userimage.present?
-              = link_to image_tag("#{@audio.user.userimage}",class:"userphoto"),"/users/#{@audio.user.id}"
-            - else
-              = link_to image_tag("member_photo_noimage.png",class:"userphoto"),"/users/#{@audio.user.id}"
-            = @audio.user.nickname
-            さんの一押しポイント
-          - if @audio.description.present?
-            %p 
-              = @audio.description
-          - else
-            %p
-              なし
           .jkjk
             = audio_tag(@audio.file.mp3.url,class:"musicstart")
+  .show__discription__under
+    .user__image
+      - if @audio.user.userimage.present?
+        = link_to image_tag("#{@audio.user.userimage}",class:"userphoto"),"/users/#{@audio.user.id}"
+      - else
+        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),"/users/#{@audio.user.id}"
+      = @audio.user.nickname
+      さんの一押しポイント
+    - if @audio.description.present?
+      %p 
+        = @audio.description
+    - else
+      %p
+        なし
     .users-list{onclick:"UserPost()"}
       =@audio.user.nickname
       さんの最近の投稿
@@ -64,36 +62,36 @@
             = useraudio.title
           %li 
             = useraudio.artistname
-  #usercomment.comment2
-    .comment__list{onclick:"CommentPost()"}
-      コメント一覧
-      %i#commentyajirushi.fas.fa-chevron-down
-  #commentpost.display_none
-    .talk
-      .user__image
-        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
-      .user-chat
-        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
-    .talk
-      .user__image
-        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
-      .user-chat
-        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
-    .talk
-      .user__image
-        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
-      .user-chat
-        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
-    .talk
-      .user__image
-        = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
-      .user-chat
-        %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
-    .chatsindex
-      =form_with do |f|
-        #textform.chatsindex__textform1
-          = f.text_field :text,class:"chatsform",placeholder:"コメントを入力してください",cols:"30",rows:"1"
-          = f.submit "送信",class:"submit"
+    #usercomment.comment2
+      .comment__list{onclick:"CommentPost()"}
+        コメント一覧
+        %i#commentyajirushi.fas.fa-chevron-down
+    #commentpost.display_none
+      .talk
+        .user__image
+          = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+        .user-chat
+          %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+      .talk
+        .user__image
+          = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+        .user-chat
+          %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+      .talk
+        .user__image
+          = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+        .user-chat
+          %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+      .talk
+        .user__image
+          = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
+        .user-chat
+          %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+      .chatsindex
+        =form_with do |f|
+          #textform.chatsindex__textform1
+            = f.text_field :text,class:"chatsform",placeholder:"コメントを入力してください",cols:"30",rows:"1"
+            = f.submit "送信",class:"submit"
     %script
       audiojs.events.ready(function() {
       var as = audiojs.createAll();
