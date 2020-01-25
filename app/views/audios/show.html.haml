@@ -31,8 +31,8 @@
               .show__discription__about__edit
                 = link_to "編集する", "/audios/#{@audio.id}/edit"
                 = link_to "削除する", "/audios/#{@audio.id}/",method: :delete,onClick:"alert('削除しました');"
-          .jkjk
-            = audio_tag(@audio.file.mp3.url,class:"musicstart")
+        .jkjk
+          = audio_tag(@audio.file.mp3.url,class:"musicstart")
   .show__discription__under
     .user__image
       - if @audio.user.userimage.present?
