@@ -9,6 +9,8 @@ class AudiosController < ApplicationController
   def show     #楽曲詳細ページ
     #ユーザーのその他の投稿項目が最新の8項目のみ表示されるようにする
     @useraudio = Audio.where(user_id:@audio.user_id).order("created_at DESC").limit(8)
+    @comment = Comment.new
+    @comments = Comment.where(audio_id:@audio.id).order("created_at ASC")
   end
   
   #mp3ファイル取り出しの例

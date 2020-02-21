@@ -67,30 +67,20 @@
         コメント一覧
         %i#commentyajirushi.fas.fa-chevron-down
     #commentpost.display_none
-      .talk
-        .user__image
-          = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
-        .user-chat
-          %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
-      .talk
-        .user__image
-          = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
-        .user-chat
-          %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
-      .talk
-        .user__image
-          = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
-        .user-chat
-          %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
-      .talk
-        .user__image
-          = link_to image_tag("member_photo_noimage.png",class:"userphoto"),""
-        .user-chat
-          %p aaaaaaaaaaaaaaaaaaaaaaaaagfgfgfg
+      - @comments.each do |comment|
+        .talk
+          .user__image
+            -if comment.user.userimage.present?
+              = link_to image_tag("#{comment.user.userimage}",class:"userphoto"),"/users/#{comment.user_id}"
+            -else
+              = link_to image_tag("member_photo_noimage.png",class:"userphoto"),"/users/#{comment.user_id}"
+          .user-chat
+            %p 
+              = comment.comment
       .chatsindex
-        =form_with do |f|
+        =form_with(model:@comment,local: true,url:"/audios/#{@audio.id}/comments",method: :post)do |f|
           #textform.chatsindex__textform1
-            = f.text_field :text,class:"chatsform",placeholder:"コメントを入力してください",cols:"30",rows:"1"
+            = f.text_field :comment,class:"chatsform",placeholder:"コメントを入力してください",cols:"30",rows:"1"
             = f.submit "送信",class:"submit"
     %script
       audiojs.events.ready(function() {
