@@ -3,7 +3,11 @@ class CommentsController < ApplicationController
 def create
   @comment =Comment.new(comments_params)
   if @comment.save
-    redirect_to "/audios/#{params[:audio_id]}"
+    respond_to do |format|
+    
+      format.html{redirect_to "/audios/#{params[:audio_id]}"}
+      format.json
+    end
   end
 end
 private

@@ -1,5 +1,5 @@
 class AudiosController < ApplicationController
-  before_action :authenticate_user!,except: [:index,:show]
+  before_action :authenticate_user!,except: [:index]
   before_action :set_audio,except: [:index,:new,:create]
   
   def index    #トップページ

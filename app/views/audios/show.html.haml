@@ -78,7 +78,7 @@
             %p 
               = comment.comment
       .chatsindex
-        =form_with(model:@comment,local: true,url:"/audios/#{@audio.id}/comments",method: :post)do |f|
+        =form_with(model:@comment,local: true,url:"/audios/#{@audio.id}/comments",method: :post,id:"newcomment")do |f|
           #textform.chatsindex__textform1
             = f.text_field :comment,class:"chatsform",placeholder:"コメントを入力してください",cols:"30",rows:"1"
             = f.submit "送信",class:"submit"
