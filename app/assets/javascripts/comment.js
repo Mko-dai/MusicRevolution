@@ -18,7 +18,7 @@ $("#newcomment").on('submit', function(e){
   })
   .done(function(data){
     var html = buildHTML(data);
-    $("#commentpost").append(html);
+    $(".talktalk").append(html);
   })
   .fail(function(){
     alert('error')

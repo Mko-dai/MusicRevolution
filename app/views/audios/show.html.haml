@@ -67,16 +67,18 @@
         コメント一覧
         %i#commentyajirushi.fas.fa-chevron-down
     #commentpost.display_none
-      - @comments.each do |comment|
-        .talk
-          .user__image
-            -if comment.user.userimage.present?
-              = link_to image_tag("#{comment.user.userimage}",class:"userphoto"),"/users/#{comment.user_id}"
-            -else
-              = link_to image_tag("member_photo_noimage.png",class:"userphoto"),"/users/#{comment.user_id}"
-          .user-chat
-            %p 
-              = comment.comment
+      .talktalk
+        - @comments.each do |comment|
+          .talk
+            .user__image
+              -if comment.user.userimage.present?
+                = link_to image_tag("#{comment.user.userimage}",class:"userphoto"),"/users/#{comment.user_id}"
+              -else
+                = link_to image_tag("member_photo_noimage.png",class:"userphoto"),"/users/#{comment.user_id}"
+            .user-chat
+              %p 
+                = comment.comment
+      .yohaku2
       .chatsindex
         =form_with(model:@comment,local: true,url:"/audios/#{@audio.id}/comments",method: :post,id:"newcomment")do |f|
           #textform.chatsindex__textform1
