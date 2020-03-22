@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   resources :users
   resources :audios do
     resources :comments,only: [:create]
+    namespace :api do
+      resources :comments, only: :index, defaults: { format: 'json' }
+    end
   end
   resources :artists
   resources :groups do
     resources :chats,only: [:index,:create]
-  end
-  namespace :api do
-    resources :comments, only: :index, defaults: { format: 'json' }
-  end
+end
 end

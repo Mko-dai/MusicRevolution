@@ -39,7 +39,7 @@ if (commentpost.className == "display_none" && userpost.className == "display_no
   }
 }
 
-audiojs.events.ready(function() {
-  var as = audiojs.createAll();
-});
+// audiojs.events.ready(function() {
+//   var as = audiojs.createAll();
+// });
 

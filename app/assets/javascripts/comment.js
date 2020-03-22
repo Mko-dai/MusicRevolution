@@ -19,6 +19,8 @@ $("#newcomment").on('submit', function(e){
   .done(function(data){
     var html = buildHTML(data);
     $(".talktalk").append(html);
+    $('.main1').animate({scrollTop: $('.main1')[0].scrollHeight}, 'fast');
+    $('html,body').animate({scrollTop: $('html,body')[0].scrollHeight}, 'fast');
   })
   .fail(function(){
     alert('error')
@@ -27,23 +29,26 @@ $("#newcomment").on('submit', function(e){
 });
 
 var autoreload = function() {
-  // if(window.location.href.match(/\/audios\/\d/)){
+  // if(window.location.href.match(/audios/)){
     var last_comment_id = $('.talk:last').data('comment-id');
+    var audio_id =  location.href;
+    console.log(audio_id)
     $.ajax({
-      url: '/api/comments',
+      url: `${audio_id}/api/comments`,
       type: 'GET',
       dataType: 'json',
-      data: {id: last_comment_id}
+      data: {lastid: last_comment_id}
     })
     .done(function(comments) {
       var insertHTML = '';
       comments.forEach(function(comment){
       var num = buildHTML(comment) + insertHTML;
       $('.talktalk').append(num)
+      $('.main1').animate({scrollTop: $('.main1')[0].scrollHeight}, 'fast');
       $('html,body').animate({scrollTop: $('html,body')[0].scrollHeight}, 'fast');
-      });
+    });
     })
     .fail(function() {
     });}
     setInterval(autoreload, 5000);
-  }/* } */);
+  }/*}*/);

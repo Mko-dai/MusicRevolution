@@ -4,6 +4,8 @@
   .fafafa
     .show
       .show__top
+        .display_none.hidoukiid
+          =@audio.id
         -if @audio.image.url.present?
           =image_tag(@audio.image.url,class:"musicview")
         -else
