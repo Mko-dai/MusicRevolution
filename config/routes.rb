@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   resources :groups do
     resources :chats,only: [:index,:create]
   end
-  
+  namespace :api do
+    resources :comments, only: :index, defaults: { format: 'json' }
+  end
 end

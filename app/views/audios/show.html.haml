@@ -69,7 +69,7 @@
     #commentpost.display_none
       .talktalk
         - @comments.each do |comment|
-          .talk
+          .talk{"data-comment-id": "#{comment.id}"}
             .user__image
               -if comment.user.userimage.present?
                 = link_to image_tag("#{comment.user.userimage}",class:"userphoto"),"/users/#{comment.user_id}"
