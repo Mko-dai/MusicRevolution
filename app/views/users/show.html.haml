@@ -32,7 +32,10 @@
     #usershow2bar1.display_none
       -@audios.each do |audio|
         .music-form
-          = link_to image_tag(audio.image.url,class:"musicview1"),"/audios/#{audio.id}"
+          -if audio.image.present?
+            = link_to image_tag(audio.image.url,class:"musicview1"),"/audios/#{audio.id}"
+          -else
+            = link_to image_tag("logo.jpg",class:"musicview1"),"/audios/#{audio.id}"          
           %li 
             = audio.title
           %li 
